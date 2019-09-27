@@ -155,7 +155,7 @@ func generateTrackingIDs(ctx APIContext) string {
 	return retString
 }
 
-//GenericError generates error log (following standard Tekion log spec)
+//GenericError generates error log (following standard vennauto log spec)
 func GenericError(ctx APIContext, e error, fields FieldsMap) {
 	prefix := generatePrefix(ctx)
 	trackingIDs := generateTrackingIDs(ctx)
@@ -169,7 +169,7 @@ func GenericError(ctx APIContext, e error, fields FieldsMap) {
 	}
 }
 
-//GenericInfo generates info log (following standard Tekion log spec)
+//GenericInfo generates info log (following standard Vennauto log spec)
 func GenericInfo(ctx APIContext, infoMessage string, fields FieldsMap) {
 	prefix := generatePrefix(ctx)
 	trackingIDs := generateTrackingIDs(ctx)
@@ -186,7 +186,7 @@ func GenericInfo(ctx APIContext, infoMessage string, fields FieldsMap) {
 
 }
 
-//GenericWarning generates warning log (following standard Tekion log spec)
+//GenericWarning generates warning log (following standard Vennauto log spec)
 func GenericWarning(ctx APIContext, warnMessage string, fields FieldsMap) {
 	if os.Getenv("TEK_SERVICE_WARN") == "true" {
 		prefix := generatePrefix(ctx)
@@ -204,7 +204,7 @@ func GenericWarning(ctx APIContext, warnMessage string, fields FieldsMap) {
 	}
 }
 
-//GenericTrace generates trace log (following standard Tekion log spec)
+//GenericTrace generates trace log (following standard Vennauto log spec)
 func GenericTrace(ctx APIContext, traceMessage string, fields FieldsMap) {
 
 	if os.Getenv("TEK_SERVICE_TRACE") == "true" {
